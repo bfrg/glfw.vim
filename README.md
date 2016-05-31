@@ -10,7 +10,7 @@ Using the Pathogen plugin:
 (http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
 ```bash
-git clone git@github.com:Eraden/glfw.vim.git ~/.vim/bundle
+git clone git@github.com:Eraden/glfw.vim.git ~/.vim/bundle/glfw-vim
 ```
 
 Hints:

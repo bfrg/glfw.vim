@@ -9,6 +9,28 @@ Instructions
 Using the Pathogen plugin:
 (http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/)
 
-If not using the Pathogen plugin:
-Add the opengl.vim file into your vim syntax folder (in most Linux distros: /usr/share/vim/vim\<version\>/syntax/after/(c|cpp)).
+```bash
+git clone git@github.com:Eraden/glfw.vim.git ~/.vim/bundle
+```
 
+Hints:
+-----------------------------------------------------------
+
+## CMake setup
+
+```CMake
+find_package(PkgConfig REQUIRED)
+find_package(OpenGL REQUIRED)
+pkg_search_module(GLFW REQUIRED glfw3)
+
+include_directories(
+  ${OPENGL_INCLUDE_DIRS}
+  ${GLFW_INCLUDE_DIRS}
+)
+
+target_link_libraries(
+  demo
+  ${GLEW_LIBRARIES}
+  ${OPENGL_LIBRARIES}
+)
+```

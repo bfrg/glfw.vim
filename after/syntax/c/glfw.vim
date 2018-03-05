@@ -1,13 +1,8 @@
 " Vim syntax file
 " Language:     C GLFW
 " Author:       Adrian Wozniak <adrian.wozniak@ita-porg.pl>
-" Version:      3.1.2
-" Last Change:  August 21, 2014
-" <adrian.wozniak@ita-prog.pl>
-"
-" Usage:
-" 
-"   Source it from somewhere
+" Version:      3.1.3
+" Last Change:  Mar 5, 2018
 
 " data types {{{
 syntax keyword glfwType GLFWvidmode
@@ -37,6 +32,8 @@ syntax keyword glfwType GLFWcharfun
 syntax keyword glfwType GLFWcharmodsfun
 syntax keyword glfwType GLFWdropfun
 syntax keyword glfwType GLFWmonitorfun
+syntax keyword glfwType GLFWvkproc
+syntax keyword glfwType GLFWjoystickfun
 " }}}
 
 " macros {{{
@@ -268,6 +265,13 @@ syntax keyword glfwConstant GLFW_VERSION_REVISION
 syntax keyword glfwConstant GLFW_RELEASE
 syntax keyword glfwConstant GLFW_PRESS
 syntax keyword glfwConstant GLFW_REPEAT
+syntax keyword glfwConstant GLFW_NO_WINDOW_CONTEXT
+syntax keyword glfwConstant GLFW_MAXIMIZED
+syntax keyword glfwConstant GLFW_CONTEXT_NO_ERROR
+syntax keyword glfwConstant GLFW_CONTEXT_CREATION_API
+syntax keyword glfwConstant GLFW_NO_API
+syntax keyword glfwConstant GLFW_NATIVE_CONTEXT_API
+syntax keyword glfwConstant GLFW_EGL_CONTEXT_API
 " }}}
 
 " functions {{{
@@ -350,7 +354,7 @@ syntax keyword glfwFunction glfwSwapBuffers
 syntax keyword glfwFunction glfwSwapInterval
 syntax keyword glfwFunction glfwExtensionSupported
 syntax keyword glfwFunction glfwGetProcAddress
-" Already set as glfwType above
+" Already set as glfwType above (these are function pointer typedefs)
 " syntax keyword glfwFunction GLFWcharfun
 " syntax keyword glfwFunction GLFWcharmodsfun
 " syntax keyword glfwFunction GLFWcursor
@@ -374,18 +378,11 @@ syntax keyword glfwFunction glfwGetProcAddress
 " syntax keyword glfwFunction GLFWwindowposfun
 " syntax keyword glfwFunction GLFWwindowrefreshfun
 " syntax keyword glfwFunction GLFWwindowsizefun
+" syntax keyword glfwFunction GLFWvkproc
+" syntax keyword glfwFunction GLFWjoystickfun
 " }}}
 
 " Default highlighting
-if version >= 508 || !exists("did_c_glfw_syntax_inits")
-  if version < 508
-    let did_c_glfw_syntax_inits = 1
-    command -nargs=+ HiLink hi link <args>
-  else
-    command -nargs=+ HiLink hi def link <args>
-  endif
-  HiLink glfwType                Type
-  HiLink glfwFunction            Function
-  HiLink glfwConstant            Constant
-  delcommand HiLink
-endif
+hi default link glfwType     Type
+hi default link glfwFunction Function
+hi default link glfwConstant Constant

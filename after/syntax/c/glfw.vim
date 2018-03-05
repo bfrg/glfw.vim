@@ -18,50 +18,25 @@ syntax keyword glfwType GLFWimage
 " typedefs {{{
 syntax keyword glfwType GLFWglproc
 syntax keyword glfwType GLFWmonitor
-syntax keyword glfwType GLFWmonitor
 syntax keyword glfwType GLFWwindow
-syntax keyword glfwType GLFWwindow
-syntax keyword glfwType GLFWcursor
 syntax keyword glfwType GLFWcursor
 syntax keyword glfwType GLFWerrorfun
 syntax keyword glfwType GLFWwindowposfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWwindowsizefun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWwindowclosefun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWwindowrefreshfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWwindowfocusfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWwindowiconifyfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWframebuffersizefun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWmousebuttonfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWcursorposfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWcursorenterfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWscrollfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWkeyfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWcharfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWcharmodsfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWdropfun
-syntax keyword glfwType GLFWwindow
 syntax keyword glfwType GLFWmonitorfun
-syntax keyword glfwType GLFWmonitor
-syntax keyword glfwType GLFWvidmode
-syntax keyword glfwType GLFWvidmode
-syntax keyword glfwType GLFWgammaramp
-syntax keyword glfwType GLFWgammaramp
-syntax keyword glfwType GLFWimage
-syntax keyword glfwType GLFWimage
 " }}}
 
 " macros {{{
@@ -187,7 +162,6 @@ syntax keyword glfwConstant GLFW_KEY_RIGHT_ALT
 syntax keyword glfwConstant GLFW_KEY_RIGHT_SUPER
 syntax keyword glfwConstant GLFW_KEY_MENU
 syntax keyword glfwConstant GLFW_KEY_LAST
-syntax keyword glfwConstant GLFW_KEY_MENU
 syntax keyword glfwConstant GLFW_MOD_SHIFT
 syntax keyword glfwConstant GLFW_MOD_CONTROL
 syntax keyword glfwConstant GLFW_MOD_ALT
@@ -201,13 +175,9 @@ syntax keyword glfwConstant GLFW_MOUSE_BUTTON_6
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_7
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_8
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_LAST
-syntax keyword glfwConstant GLFW_MOUSE_BUTTON_8
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_LEFT
-syntax keyword glfwConstant GLFW_MOUSE_BUTTON_1
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_RIGHT
-syntax keyword glfwConstant GLFW_MOUSE_BUTTON_2
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_MIDDLE
-syntax keyword glfwConstant GLFW_MOUSE_BUTTON_3
 syntax keyword glfwConstant GLFW_JOYSTICK_1
 syntax keyword glfwConstant GLFW_JOYSTICK_2
 syntax keyword glfwConstant GLFW_JOYSTICK_3
@@ -225,7 +195,6 @@ syntax keyword glfwConstant GLFW_JOYSTICK_14
 syntax keyword glfwConstant GLFW_JOYSTICK_15
 syntax keyword glfwConstant GLFW_JOYSTICK_16
 syntax keyword glfwConstant GLFW_JOYSTICK_LAST
-syntax keyword glfwConstant GLFW_JOYSTICK_16
 syntax keyword glfwConstant GLFW_NOT_INITIALIZED
 syntax keyword glfwConstant GLFW_NO_CURRENT_CONTEXT
 syntax keyword glfwConstant GLFW_INVALID_ENUM
@@ -306,184 +275,105 @@ syntax keyword glfwFunction glfwInit
 syntax keyword glfwFunction glfwTerminate
 syntax keyword glfwFunction glfwGetVersion
 syntax keyword glfwFunction glfwGetVersionString
-syntax keyword glfwFunction GLFWerrorfun
 syntax keyword glfwFunction glfwSetErrorCallback
-syntax keyword glfwFunction GLFWerrorfun
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwGetMonitors
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwGetPrimaryMonitor
 syntax keyword glfwFunction glfwGetMonitorPos
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwGetMonitorPhysicalSize
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwGetMonitorName
-syntax keyword glfwFunction GLFWmonitor
-syntax keyword glfwFunction GLFWmonitorfun
 syntax keyword glfwFunction glfwSetMonitorCallback
-syntax keyword glfwFunction GLFWmonitorfun
-syntax keyword glfwFunction GLFWvidmode
 syntax keyword glfwFunction glfwGetVideoModes
-syntax keyword glfwFunction GLFWmonitor
-syntax keyword glfwFunction GLFWvidmode
 syntax keyword glfwFunction glfwGetVideoMode
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwSetGamma
-syntax keyword glfwFunction GLFWmonitor
-syntax keyword glfwFunction GLFWgammaramp
 syntax keyword glfwFunction glfwGetGammaRamp
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwSetGammaRamp
-syntax keyword glfwFunction GLFWmonitor
-syntax keyword glfwFunction GLFWgammaramp
 syntax keyword glfwFunction glfwDefaultWindowHints
 syntax keyword glfwFunction glfwWindowHint
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwCreateWindow
-syntax keyword glfwFunction GLFWmonitor
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwDestroyWindow
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwWindowShouldClose
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetWindowShouldClose
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetWindowTitle
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetWindowPos
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetWindowPos
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetWindowSize
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetWindowSize
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetFramebufferSize
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetWindowFrameSize
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwIconifyWindow
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwRestoreWindow
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwShowWindow
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwHideWindow
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWmonitor
 syntax keyword glfwFunction glfwGetWindowMonitor
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetWindowAttrib
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetWindowUserPointer
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetWindowUserPointer
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowposfun
 syntax keyword glfwFunction glfwSetWindowPosCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowposfun
-syntax keyword glfwFunction GLFWwindowsizefun
 syntax keyword glfwFunction glfwSetWindowSizeCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowsizefun
-syntax keyword glfwFunction GLFWwindowclosefun
 syntax keyword glfwFunction glfwSetWindowCloseCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowclosefun
-syntax keyword glfwFunction GLFWwindowrefreshfun
 syntax keyword glfwFunction glfwSetWindowRefreshCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowrefreshfun
-syntax keyword glfwFunction GLFWwindowfocusfun
 syntax keyword glfwFunction glfwSetWindowFocusCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowfocusfun
-syntax keyword glfwFunction GLFWwindowiconifyfun
 syntax keyword glfwFunction glfwSetWindowIconifyCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindowiconifyfun
-syntax keyword glfwFunction GLFWframebuffersizefun
 syntax keyword glfwFunction glfwSetFramebufferSizeCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWframebuffersizefun
 syntax keyword glfwFunction glfwPollEvents
 syntax keyword glfwFunction glfwWaitEvents
 syntax keyword glfwFunction glfwPostEmptyEvent
 syntax keyword glfwFunction glfwGetInputMode
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetInputMode
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetKey
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetMouseButton
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetCursorPos
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSetCursorPos
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcursor
 syntax keyword glfwFunction glfwCreateCursor
-syntax keyword glfwFunction GLFWimage
-syntax keyword glfwFunction GLFWcursor
 syntax keyword glfwFunction glfwCreateStandardCursor
 syntax keyword glfwFunction glfwDestroyCursor
-syntax keyword glfwFunction GLFWcursor
 syntax keyword glfwFunction glfwSetCursor
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcursor
-syntax keyword glfwFunction GLFWkeyfun
 syntax keyword glfwFunction glfwSetKeyCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWkeyfun
-syntax keyword glfwFunction GLFWcharfun
 syntax keyword glfwFunction glfwSetCharCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcharfun
-syntax keyword glfwFunction GLFWcharmodsfun
 syntax keyword glfwFunction glfwSetCharModsCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcharmodsfun
-syntax keyword glfwFunction GLFWmousebuttonfun
 syntax keyword glfwFunction glfwSetMouseButtonCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWmousebuttonfun
-syntax keyword glfwFunction GLFWcursorposfun
 syntax keyword glfwFunction glfwSetCursorPosCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcursorposfun
-syntax keyword glfwFunction GLFWcursorenterfun
 syntax keyword glfwFunction glfwSetCursorEnterCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWcursorenterfun
-syntax keyword glfwFunction GLFWscrollfun
 syntax keyword glfwFunction glfwSetScrollCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWscrollfun
-syntax keyword glfwFunction GLFWdropfun
 syntax keyword glfwFunction glfwSetDropCallback
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWdropfun
 syntax keyword glfwFunction glfwJoystickPresent
 syntax keyword glfwFunction glfwGetJoystickAxes
 syntax keyword glfwFunction glfwGetJoystickButtons
 syntax keyword glfwFunction glfwGetJoystickName
 syntax keyword glfwFunction glfwSetClipboardString
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetClipboardString
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetTime
 syntax keyword glfwFunction glfwSetTime
 syntax keyword glfwFunction glfwMakeContextCurrent
-syntax keyword glfwFunction GLFWwindow
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwGetCurrentContext
 syntax keyword glfwFunction glfwSwapBuffers
-syntax keyword glfwFunction GLFWwindow
 syntax keyword glfwFunction glfwSwapInterval
 syntax keyword glfwFunction glfwExtensionSupported
-syntax keyword glfwFunction GLFWglproc
 syntax keyword glfwFunction glfwGetProcAddress
+" Already set as glfwType above
+" syntax keyword glfwFunction GLFWcharfun
+" syntax keyword glfwFunction GLFWcharmodsfun
+" syntax keyword glfwFunction GLFWcursor
+" syntax keyword glfwFunction GLFWcursorenterfun
+" syntax keyword glfwFunction GLFWcursorposfun
+" syntax keyword glfwFunction GLFWdropfun
+" syntax keyword glfwFunction GLFWerrorfun
+" syntax keyword glfwFunction GLFWframebuffersizefun
+" syntax keyword glfwFunction GLFWgammaramp
+" syntax keyword glfwFunction GLFWglproc
+" syntax keyword glfwFunction GLFWimage
+" syntax keyword glfwFunction GLFWkeyfun
+" syntax keyword glfwFunction GLFWmonitor
+" syntax keyword glfwFunction GLFWmonitorfun
+" syntax keyword glfwFunction GLFWmousebuttonfun
+" syntax keyword glfwFunction GLFWscrollfun
+" syntax keyword glfwFunction GLFWvidmode
+" syntax keyword glfwFunction GLFWwindowclosefun
+" syntax keyword glfwFunction GLFWwindowfocusfun
+" syntax keyword glfwFunction GLFWwindowiconifyfun
+" syntax keyword glfwFunction GLFWwindowposfun
+" syntax keyword glfwFunction GLFWwindowrefreshfun
+" syntax keyword glfwFunction GLFWwindowsizefun
 " }}}
 
 " Default highlighting

@@ -1,13 +1,14 @@
 " Vim syntax file
 " Language:     C GLFW
 " Author:       Adrian Wozniak <adrian.wozniak@ita-porg.pl>
-" Version:      3.1.3
-" Last Change:  Mar 5, 2018
+" Version:      3.3
+" Last Change:  Mar 9, 2019
 
 " data types {{{
 syntax keyword glfwType GLFWvidmode
 syntax keyword glfwType GLFWgammaramp
 syntax keyword glfwType GLFWimage
+syntax keyword glfwType GLFWgamepadstate
 " }}}
 
 " typedefs {{{
@@ -34,9 +35,14 @@ syntax keyword glfwType GLFWdropfun
 syntax keyword glfwType GLFWmonitorfun
 syntax keyword glfwType GLFWvkproc
 syntax keyword glfwType GLFWjoystickfun
+syntax keyword glfwType GLFWwindowmaximizefun
+syntax keyword glfwType GLFWwindowcontentscalefun
 " }}}
 
 " macros {{{
+syntax keyword glfwDefine GLFWAPI
+syntax keyword glfwConstant GLFW_TRUE
+syntax keyword glfwConstant GLFW_FALSE
 syntax keyword glfwConstant GLFW_KEY_UNKNOWN
 syntax keyword glfwConstant GLFW_KEY_SPACE
 syntax keyword glfwConstant GLFW_KEY_APOSTROPHE
@@ -163,6 +169,8 @@ syntax keyword glfwConstant GLFW_MOD_SHIFT
 syntax keyword glfwConstant GLFW_MOD_CONTROL
 syntax keyword glfwConstant GLFW_MOD_ALT
 syntax keyword glfwConstant GLFW_MOD_SUPER
+syntax keyword glfwConstant GLFW_MOD_CAPS_LOCK
+syntax keyword glfwConstant GLFW_MOD_NUM_LOCK
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_1
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_2
 syntax keyword glfwConstant GLFW_MOUSE_BUTTON_3
@@ -265,6 +273,15 @@ syntax keyword glfwConstant GLFW_VERSION_REVISION
 syntax keyword glfwConstant GLFW_RELEASE
 syntax keyword glfwConstant GLFW_PRESS
 syntax keyword glfwConstant GLFW_REPEAT
+syntax keyword glfwConstant GLFW_HAT_CENTERED
+syntax keyword glfwConstant GLFW_HAT_UP
+syntax keyword glfwConstant GLFW_HAT_RIGHT
+syntax keyword glfwConstant GLFW_HAT_DOWN
+syntax keyword glfwConstant GLFW_HAT_LEFT
+syntax keyword glfwConstant GLFW_HAT_RIGHT_UP
+syntax keyword glfwConstant GLFW_HAT_RIGHT_DOWN
+syntax keyword glfwConstant GLFW_HAT_LEFT_UP
+syntax keyword glfwConstant GLFW_HAT_LEFT_DOWN
 syntax keyword glfwConstant GLFW_NO_WINDOW_CONTEXT
 syntax keyword glfwConstant GLFW_MAXIMIZED
 syntax keyword glfwConstant GLFW_CONTEXT_NO_ERROR
@@ -272,6 +289,50 @@ syntax keyword glfwConstant GLFW_CONTEXT_CREATION_API
 syntax keyword glfwConstant GLFW_NO_API
 syntax keyword glfwConstant GLFW_NATIVE_CONTEXT_API
 syntax keyword glfwConstant GLFW_EGL_CONTEXT_API
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_A
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_B
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_X
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_Y
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_LEFT_BUMPER
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_RIGHT_BUMPER
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_BACK
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_START
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_GUIDE
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_LEFT_THUMB
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_RIGHT_THUMB
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_DPAD_UP
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_DPAD_RIGHT
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_DPAD_DOWN
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_DPAD_LEFT
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_LAST
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_CROSS
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_CIRCLE
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_SQUARE
+syntax keyword glfwConstant GLFW_GAMEPAD_BUTTON_TRIANGLE
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_LEFT_X
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_LEFT_Y
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_RIGHT_X
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_RIGHT_Y
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_LEFT_TRIGGER
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_RIGHT_TRIGGER
+syntax keyword glfwConstant GLFW_GAMEPAD_AXIS_LAST
+syntax keyword glfwConstant GLFW_NO_ERROR
+syntax keyword glfwConstant GLFW_CENTER_CURSOR
+syntax keyword glfwConstant GLFW_TRANSPARENT_FRAMEBUFFER
+syntax keyword glfwConstant GLFW_HOVERED
+syntax keyword glfwConstant GLFW_FOCUS_ON_SHOW
+syntax keyword glfwConstant GLFW_SCALE_TO_MONITOR
+syntax keyword glfwConstant GLFW_COCOA_RETINA_FRAMEBUFFER
+syntax keyword glfwConstant GLFW_COCOA_FRAME_NAME
+syntax keyword glfwConstant GLFW_COCOA_GRAPHICS_SWITCHING
+syntax keyword glfwConstant GLFW_X11_CLASS_NAME
+syntax keyword glfwConstant GLFW_X11_INSTANCE_NAME
+syntax keyword glfwConstant GLFW_LOCK_KEY_MODS
+syntax keyword glfwConstant GLFW_RAW_MOUSE_MOTION
+syntax keyword glfwConstant GLFW_OSMESA_CONTEXT_API
+syntax keyword glfwConstant GLFW_JOYSTICK_HAT_BUTTONS
+syntax keyword glfwConstant GLFW_COCOA_CHDIR_RESOURCES
+syntax keyword glfwConstant GLFW_COCOA_MENUBAR
 " }}}
 
 " functions {{{
@@ -382,7 +443,14 @@ syntax keyword glfwFunction glfwGetProcAddress
 " syntax keyword glfwFunction GLFWjoystickfun
 " }}}
 
+" data fields (currently not used) {{{
+" syntax keyword glfwDataField width height redBits greenBits blueBits refreshRate
+" syntax keyword glfwDataField red green blue size
+" syntax keyword glfwDataField pixels
+" }}}
+
 " Default highlighting
 hi default link glfwType     Type
 hi default link glfwFunction Function
 hi default link glfwConstant Constant
+hi default link glfwDefine   Define
